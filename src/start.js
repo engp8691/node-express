@@ -1,9 +1,9 @@
 import express from 'express'
 import 'express-async-errors'
 import logger from 'loglevel'
-import {getRoutes} from './routes'
+import {getRoutes} from './routes/server'
 
-function startServer({port = process.env.PORT} = {}) {
+function startServer({port = process.env.PORT || 3000} = {}) {
   const app = express()
 
   app.use('/api', getRoutes())
